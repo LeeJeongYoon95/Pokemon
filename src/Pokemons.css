@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
+
+*{font-family: 'Overpass', sans-serif;}
+
+div{
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+ul{
+    margin:5vw auto;
+    list-style: none;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+ul li p{
+    font-size:1em;
+    font-weight: 400;
+}
