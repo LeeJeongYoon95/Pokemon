@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Kakao from './components/Kakao.js';
 import kakaoFriends from './constants/kakao.json';
-import Pokemons from './Ditto.js';
 import './App.css';
 import './Pokemons.css';
-import Ditto from './Ditto.js';
+import Pokemon from './Pokemon.js';
 import Venusaur from './Venusaur.js';
 import Blaze from './Blaze.js';
 
-function App() {
 
+
+function App() {
+  const [pokemonId, setPokemonId] = useState([1, 2, 3]);
+  const inputElement = useRef(null);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,10 +20,24 @@ function App() {
         {/* {kakaoFriends.list.map((friend, i) => {
           return (<Kakao friend={friend} key={i}></Kakao>)
         })} */}
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            const pokemonId = Number(inputElement.current.value);
+            const isNumber = typeof pokemonId === 'number';
+            if (isNumber)
+              if (pokemonId < 807)
+                setPokemonId(prev => [...prev, inputElement.current.value])
+          }}>
+          <input type="text" ref={inputElement}
+            placeholder="Please enter Pokemon ID number"></input>
+          <button type="submit">Add to Pokemon</button>
+        </form>
+
         <div>
-          <Ditto></Ditto>
-          <Venusaur></Venusaur>
-          <Blaze></Blaze>
+          {pokemonId.map((id, i) => {
+            return <Pokemon id={id} key={id + i}></Pokemon>;
+          })}
         </div>
       </main>
     </div>
