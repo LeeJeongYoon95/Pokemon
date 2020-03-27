@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react';
-import Kakao from './components/Kakao.js';
-import kakaoFriends from './constants/kakao.json';
 import './App.css';
-import './Pokemons.css';
-import Pokemon from './Pokemon.js';
-import Venusaur from './Venusaur.js';
-import Blaze from './Blaze.js';
+import Pokemon from './components/Pokemon.js';
 
 
 
