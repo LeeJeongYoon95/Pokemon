@@ -2,9 +2,9 @@
 
 *{font-family: 'Overpass', sans-serif;}
 
-div{
+ul{
     width:90%;
-    margin:3vw auto;
+    margin:5vw auto;
     justify-content: space-between;
     align-items: stretch;
     display: flex;
@@ -27,6 +27,7 @@ li p{
 
 
 input{
+    margin: 5vw auto;
     width:30%;
     padding:0.5vw;
 }

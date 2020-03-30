@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './Pokemons.css';
 
 
-const Pokemon = ({ id }) => {
+const Pokemon = ({ info }) => {
     const [pokemon, setPokemon] = useState(null);
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/${info}`)
             .then(res => res.json())
             .then(pokemon => {
                 setPokemon(pokemon);
@@ -38,5 +37,13 @@ const Pokemon = ({ id }) => {
 
 }
 
+const PokemonList = ({ pokemonInfo }) => (
+    <ul>
+        {pokemonInfo.map((info, i) => {
+            return <Pokemon info={info} key={info + i + Date.now()}></Pokemon>;
+        })}
+    </ul>
+);
 
-export default Pokemon;
+
+export default PokemonList;
