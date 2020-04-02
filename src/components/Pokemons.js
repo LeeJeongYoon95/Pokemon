@@ -4,6 +4,7 @@ import PokemonInput from './PokemonInput';
 import PokemonList from './PokemonList';
 
 
+
 const Pokemon = () => {
 
     const [pokemonInfo, setPokemonInfo] = useState([1, 2, 3]);
@@ -15,13 +16,19 @@ const Pokemon = () => {
         const isNumber = typeof Number(pokemonInfo) === 'number';
         const isString = typeof pokemonInfo === 'string';
 
-        if (isNumber)
-            if (pokemonInfo < 807)
+        if (isNumber) {
+            if (pokemonInfo < 807) {
                 setPokemonInfo(prev => [...prev, pokemonInfo])
+            }
 
-        if (isString) {
-
+            else if (isString) {
+                setPokemonInfo(prev => [...prev, pokemonInfo])
+            } else {
+                alert('해당 포켓몬은 존재하지 않습니다.');
+            }
         }
+
+
 
     }
 

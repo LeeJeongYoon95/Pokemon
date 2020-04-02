@@ -17,12 +17,12 @@ const Pokemon = ({ info }) => {
     }, []);
 
     if (!pokemon) {
-        return <div>loading</div>;
+        return <div></div>;
     }
 
     return (
         <li>
-            <p>Name - {pokemon.name}</p>
+            <p>{pokemon.name}</p>
             <p>ID : {pokemon.id}</p>
             <p>
                 <img src={pokemon.sprites.back_default} alt="" />
