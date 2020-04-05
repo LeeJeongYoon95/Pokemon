@@ -19,16 +19,13 @@ const Pokemon = () => {
         if (isNumber) {
             if (pokemonInfo < 807) {
                 setPokemonInfo(prev => [...prev, pokemonInfo])
-            }
-
-            else if (isString) {
-                setPokemonInfo(prev => [...prev, pokemonInfo])
-            } else {
-                alert('해당 포켓몬은 존재하지 않습니다.');
+                return
             }
         }
-
-
+        if (isString) {
+            setPokemonInfo(prev => [...prev, pokemonInfo])
+            return
+        }
 
     }
 
